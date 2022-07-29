@@ -19,11 +19,18 @@ namespace PlanBetterAutomation
 
         }
         [TestMethod]
-        public void TestLogin_SuccessfullyLogin()
+        public void AdminTestLogin_SuccessfullyLogin()
         {
             var login = new LoginPage(driver);
             login.Login("email1@facultate.profesor.com", "parola123");
             var admin = new AdminPage(driver);
+        }
+        [TestMethod]
+        public void StudentTestLogin_SuccessfullyLogin()
+        {
+            var login = new LoginPage(driver);
+            login.Login("email2@facultate.student.com", "admin123");
+            var student = new StudentPage(driver);
         }
         [TestMethod]
         public void TestLogin_WrongCredentialsLogin()
