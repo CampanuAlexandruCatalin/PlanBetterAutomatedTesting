@@ -22,14 +22,14 @@ namespace PlanBetterAutomation
         public void AdminTestLogin_SuccessfullyLogin()
         {
             var login = new LoginPage(driver);
-            login.Login("email1@facultate.profesor.com", "parola123");
+            login.Login("primuladmin@planbetter.com", "admin");
             var admin = new AdminPage(driver);
         }
         [TestMethod]
         public void StudentTestLogin_SuccessfullyLogin()
         {
             var login = new LoginPage(driver);
-            login.Login("email2@facultate.student.com", "admin123");
+            login.Login("primulstudent@planbetter.com", "admin");
             var student = new StudentPage(driver);
         }
         [TestMethod]
@@ -37,8 +37,7 @@ namespace PlanBetterAutomation
         {
             var login = new LoginPage(driver);
             login.Login("email1@facultate.profesor.com", "invalid");
-            var errorMessage = login.InvalidLoginMessage();
-            Assert.AreEqual("Bad email or password.", errorMessage);
+            var login1 = new LoginPage(driver);
         }
 
         [TestCleanup]

@@ -27,7 +27,7 @@ namespace PlanBetterAutomation.PageObjects
         private IWebElement BtnLogin => Driver.FindElement(login);
 
 
-        private readonly By error = By.XPath("");
+        private readonly By error = By.XPath("//div[@class='alert alert-notice']");
         private IWebElement TxtError => Driver.FindElement(error);
 
         public void Login(string username, string password)
